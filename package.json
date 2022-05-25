@@ -10,6 +10,12 @@
   "author": "",
   "license": "ISC",
   "bin": {
-    "watchit" : "index.js"
+    "watchit": "index.js"
+  },
+  "dependencies": {
+    "caporal": "^1.4.0",
+    "chokidar": "^3.5.3",
+    "fs": "^0.0.1-security",
+    "lodash.debounce": "^4.0.8"
   }
 }
