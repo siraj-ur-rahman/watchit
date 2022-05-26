@@ -16,8 +16,12 @@ program
     } catch (err) {
       throw new Error(`Couldn't not find the file ${name}`);
     }
+    let lastRun;
     const start = debounce(() => {
-      return spawn("node", [name], { stdio: "inherit" });
+      if (lastRun) {
+        lastRun.kill();
+      }
+      lastRun = spawn("node", [name], { stdio: "inherit" });
     }, 250);
 
     chokidar
